@@ -1,0 +1,224 @@
+/* 基础重置和全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+
+        /* 屏幕容器通用样式 */
+        .screen {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* 当前激活的屏幕 */
+        .screen.active {
+            display: flex;
+        }
+
+        /* 文字动画相关样式 */
+        [data-animate] {
+            opacity: 0;
+            animation: fadeInDown 1s ease forwards;
+        }
+
+        h1 {
+            opacity: 0;
+            animation: fadeInDown 2s ease forwards;
+            animation-delay: 2s;
+
+        }
+
+        /* 箭头按钮样式 */
+        .nav-arrow {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            opacity: 1;
+        }
+
+        /* 按钮样式 */
+        .btn-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            min-width: 80px;
+            height: 50px;
+            padding: 0 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* 特殊元素定位 */
+        #千空 {
+            height: 12em;
+            margin: 20px 0;
+        }
+
+        /* 第六屏定位元素 */
+        #s6h6 {
+            position: absolute;
+            top: 12.5em;
+            left: 7em;
+        }
+
+        #s6h7 {
+            position: absolute;
+            top: 257px;
+            right: 4.5em;
+        }
+
+        #s6h8 {
+            position: absolute;
+            bottom: 5em;
+            left: 0em;
+        }
+
+        #s6h9 {
+            position: absolute;
+            bottom: 13.3em;
+            right: 7em;
+        }
+
+        #s6h10 {
+            position: absolute;
+            top: 66%;
+            left: 12%;
+        }
+
+        #s6h11 {
+            position: absolute;
+            top: 31%;
+            right: -1%;
+        }
+
+        #s6h12 {
+            position: absolute;
+            bottom: 34%;
+            left: 0%;
+        }
+
+        #s6h13 {
+            position: absolute;
+            bottom: 19%;
+            right: 9%;
+        }
+
+        #s6h14 {
+            position: absolute;
+            top: 14%;
+            left: 37%;
+        }
+
+        #s6h15 {
+            position: absolute;
+            top: 19%;
+            right: 16%;
+        }
+
+        /* 动画定义 */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleTextbigger {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+                font-size: 40px;
+            }
+        }
+
+        @keyframes scaleTextsmaller {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+                font-size: 25px;
+            }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+
+            /* 调整字体大小 */
+            html {
+                font-size: 14px;
+            }
+
+            /* 调整定位元素 */
+            #s6h6 {
+                top: 8em;
+                left: 2em;
+            }
+
+            #s6h7 {
+                top: 150px;
+                right: 2em;
+            }
+
+            #千空 {
+                height: 8em;
+            }
+
+            /* 按钮尺寸调整 */
+            .btn {
+                min-width: 70px;
+                height: 45px;
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            html {
+                font-size: 18px;
+            }
+        }
